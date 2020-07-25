@@ -1,5 +1,6 @@
-package com.example;
+package com.example.service;
 
+import com.example.client.CuratorClientService;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.cache.*;
 import org.apache.zookeeper.data.Stat;
@@ -19,7 +20,7 @@ public class WatchService {
     private static String PATH = "/watchNode";
 
     /**
-     * PathChildrenCache监听子节点
+     * PathChildrenCache 监听子节点事件
      * @throws Exception
      */
     public void listenerPath() throws Exception {
@@ -29,7 +30,7 @@ public class WatchService {
         PathChildrenCacheListener cacheListener = (curatorFramework, event) -> {
             logger.info("Event Type ：" + event.getType());
             if (null != event.getData()) {
-                logger.info("data ：" + event.getData().getPath() + " = " + new String(event.getData().getData()));
+                logger.info("Path = " + event.getData().getPath() + ", Data = " + new String(event.getData().getData()));
             }
         };
         cache.getListenable().addListener(cacheListener);
@@ -37,7 +38,7 @@ public class WatchService {
     }
 
     /**
-     * NodeCache监听指定节点
+     * NodeCache 监听指定节点事件
      * @throws Exception
      */
     public void listenerTask() throws Exception {
@@ -62,7 +63,7 @@ public class WatchService {
     }
 
     /**
-     * TreeCache监听整个树的节点
+     * TreeCache 监听整个树的节点事件
      * @throws Exception
      */
     public void listenerTree() throws Exception {

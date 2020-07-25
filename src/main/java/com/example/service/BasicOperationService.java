@@ -1,5 +1,6 @@
-package com.example;
+package com.example.service;
 
+import com.example.client.CuratorClientService;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.CreateMode;
 import org.slf4j.Logger;

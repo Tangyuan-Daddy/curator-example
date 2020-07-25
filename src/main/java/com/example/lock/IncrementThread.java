@@ -27,7 +27,7 @@ public class IncrementThread extends Thread {
     public void run() {
         String threadName = Thread.currentThread().getName();
         try {
-            for (int i = 0; i < 50; i++) {
+            for (int i = 0; i < 10; i++) {
                 lock.acquire();
                 logger.info(threadName + " 获取锁");
                 incrementObject.setCount(incrementObject.getCount() + 1);

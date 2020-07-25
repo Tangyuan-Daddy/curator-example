@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.service.WatchService;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,18 +19,18 @@ public class WatchServiceTest {
         this.watchService = new WatchService();
     }
 
-    @Test
+    /*@Test
     public void testListenerTask() throws Exception {
         watchService.listenerTask();
-    }
+    }*/
 
     @Test
     public void testListenerTaskPath() throws Exception {
         watchService.listenerPath();
     }
 
-    @Test
+    /*@Test
     public void testListenerTree() throws Exception {
         watchService.listenerTree();
-    }
+    }*/
 }
